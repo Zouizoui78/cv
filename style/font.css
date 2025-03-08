@@ -1,7 +1,3 @@
-@page {
-    size: A4;
-}
-
 body {
     color: #575757;
     font-family: Helvetica, sans-serif;
@@ -22,7 +18,6 @@ body {
     font-size: large;
 }
 
-a:link,
-a:visited {
+a {
     color: #575757;
 }
