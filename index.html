@@ -1,20 +1,232 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/font.css">
+    <link rel="stylesheet" href="style/section.css">
 </head>
 
 <body>
     <header>
-        <div class="font-title font-name">Alexandre Zouiten</div>
-        <div class="font-title">Software Engineer</div>
+        <div class="name">Alexandre Zouiten</div>
+        <div class="job">Software Engineer</div>
     </header>
     <main>
-        <section class="box left-column">
-            <div class="font-title">Contact</div>
-        </section>
-        <section class="box">Past Experience</section>
+        <div class="container left-column">
+            <section>
+                <h2>Contact</h2>
+                <ul>
+                    <li>+33 6 75 56 14 14</li>
+                    <li>alexandre.zouiten1@gmail.com</li>
+                    <li><a href="github.com/Zouizoui78">github.com/Zouizoui78</a></li>
+                    <li>Toulouse, France</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+
+                <section>
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>C, C++</li>
+                        <li>C#, JS, Python</li>
+                        <li>Bash</li>
+                        <li>SQL</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Make</li>
+                        <li>CMake</li>
+                        <li>GitHub Actions</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Software engineering skills</h3>
+                    <ul>
+                        <li>Analysis</li>
+                        <li>Debugging</li>
+                        <li>Maintainable code lover</li>
+                        <li>Object oriented design</li>
+                        <li>Optimization</li>
+                        <li>Used to huge and convoluted codebases</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Soft skills</h3>
+                    <ul>
+                        <li>Autonomous</li>
+                        <li>Easy to talk to</li>
+                        <li>Good team worker</li>
+                        <li>Pragmatism</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+
+                <section>
+                    <h3>Electronic Engineer</h3>
+                    <div>
+                        <span>ENSEEIHT</span>
+                        <em>2018-2021</em>
+                    </div>
+                    <ul>
+                        <li>Electronics</li>
+                        <li>Embedded programming</li>
+                        <li>Microcontollers</li>
+                        <li>Signal processing</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>DUT GEII</h3>
+                    <div>
+                        <span>IUT Cergy-Pontoise</span>
+                        <em>2016-2018</em>
+                    </div>
+                    <ul>
+                        <li>Electronics</li>
+                        <li>Industrial programming</li>
+                        <li>Networks</li>
+                        <li>Signal processing</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <h2>Languages</h2>
+                <ul>
+                    <li>French (native)</li>
+                    <li>English (C1+)</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="container">
+            <section>
+                <h2>Work Experience</h2>
+
+                <section>
+                    <h3>Software Engineer</h3>
+                    <div>
+                        <span>Vector (remote, english speaking team)</span>
+                        <em>07/2023 - Present</em>
+                    </div>
+                    <h4>Simulation and testing software editor</h4>
+
+                    <ul>
+                        <li>
+                            Integration of the ASAM XIL API in CANoe software (C++/C#)
+                        </li>
+                        <li>
+                            Took part in CANoe development
+                        </li>
+                        <li>
+                            CI/CD (GitHub Actions/Internal tools)
+                        </li>
+                        <li>
+                            User support and integration of feedback
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Software Engineer</h3>
+                    <div>
+                        <span>APTIC (remote)</span>
+                        <em>03/2023 - 06/2023</em>
+                    </div>
+                    <h4>Company working for e-inclusion</h4>
+
+                    <ul>
+                        <li>Backend (TypeScript/Nest)</li>
+                        <li>Frontend (TypeScript/Angular)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Software Engineer</h3>
+                    <div>
+                        <span>Blue Industry and Science (remote)</span>
+                        <em>2021-2023</em>
+                    </div>
+                    <h4>Startup producing a gas analyzer</h4>
+
+                    <ul>
+                        <li>Development of a driver application for the analyzer (C++/Qt)</li>
+                        <li>Integration of a web server in embedded software (C++/HTML/JS)</li>
+                        <li>Various optimizations and fixes in embedded software (C++)</li>
+                        <li>Development of various internal tools (C/C++/Python)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Software Engineer Apprentice</h3>
+                    <div>
+                        <span>ArianeGroup</span>
+                        <em>2018-2021</em>
+                    </div>
+                    <h4>Rocket launcher company</h4>
+
+                    <ul>
+                        <li>Took part in development of various softwares (C++/Lua/Python)</li>
+                        <li>Development of a 3D library for a flight simulator (C++/Godot)</li>
+                        <li>Development of a sample app based on the 3D library (C++/Godot)</li>
+                        <li>3D project autonomous management (2 people)</li>
+                        <li>Team-building event organization (30+ people)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Software Developer Apprentice</h3>
+                    <div>
+                        <span>WAGO</span>
+                        <em>2017-2018</em>
+                    </div>
+                    <h4>Electric tooling and industrial automation company</h4>
+
+                    <ul>
+                        <li>Development of various software pieces</li>
+                        <li>Autonomous developments for clients (requirements analysis, development, delivery)</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <h2>Personal Projects</h2>
+
+                <section>
+                    <h3><a href="https://github.com/Zouizoui78/zouipocar">GPS tracking device</a></h3>
+                    <ul>
+                        <li>Embedded software sending position to server (C)</li>
+                        <li>GSM/GPS module handling (UART/AT commands)</li>
+                        <li>Server gathering data and exposing and API (C++/SQLite)</li>
+                        <li>Network programming (UDP)</li>
+                        <li>Frontend to track the tracker in real time (HTML/CSS/JS/Leaflet)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Linux server administration</h3>
+                    <ul>
+                        <li>User management</li>
+                        <li>Various services hosting (cloud, streaming, git,...)</li>
+                        <li>Redundant storage (RAID)</li>
+                        <li>3/2/1 backup strategy</li>
+                    </ul>
+                </section>
+            </section>
+        </div>
     </main>
 </body>
 

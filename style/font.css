@@ -1,0 +1,28 @@
+@page {
+    size: A4;
+}
+
+body {
+    color: #575757;
+    font-family: Helvetica, sans-serif;
+}
+
+.name,
+.job {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.name {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.job {
+    font-size: large;
+}
+
+a:link,
+a:visited {
+    color: #575757;
+}

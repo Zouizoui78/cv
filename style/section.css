@@ -1,0 +1,43 @@
+section {
+    font-size: small;
+    margin-bottom: 1.5em;
+
+    h2 {
+        font-size: medium;
+        font-weight: bold;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+
+        margin-top: 0;
+        margin-bottom: .2em;
+    }
+
+    ul {
+        margin-top: .5em;
+        padding-left: 1.5em;
+    }
+
+    section {
+        margin-bottom: .5em;
+
+        h3 {
+            font-size: medium;
+            margin: 0;
+        }
+
+        h4 {
+            font-style: italic;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        em {
+            align-content: center;
+        }
+    }
+}
