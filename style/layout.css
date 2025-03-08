@@ -1,5 +1,6 @@
 @page {
     size: A4;
+    margin: 0;
 }
 
 html,
@@ -30,6 +31,6 @@ main {
     padding-bottom: 0;
 }
 
-.left-column {
+.grey-background {
     background-color: #f4f4f4;
 }
