@@ -15,7 +15,7 @@ body {
     margin: 0;
 
     display: grid;
-    grid-template-rows: 2.5cm;
+    grid-template-rows: 2cm;
 
     border-bottom: 1px solid #575757;
 }
