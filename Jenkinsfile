@@ -6,6 +6,9 @@ node {
         sh 'chromium --headless --no-sandbox --print-to-pdf=cv_zouiten_en.pdf src/cv_zouiten_en.html'
         sh 'chromium --headless --no-sandbox --print-to-pdf=cv_zouiten_fr.pdf src/cv_zouiten_fr.html'
     }
-    sh 'curl -T cv_zouiten_en.pdf https://cv.zouizoui.ovh/api/cv_zouiten_en.pdf'
-    sh 'curl -T cv_zouiten_fr.pdf https://cv.zouizoui.ovh/api/cv_zouiten_fr.pdf'
+
+    withCredentials([usernamePassword(credentialsId: 'cv-upload', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        sh 'curl --fail-with-body -T cv_zouiten_en.pdf -u "$USERNAME:$PASSWORD" https://cv.zouizoui.ovh/api/cv_zouiten_en.pdf'
+        sh 'curl --fail-with-body -T cv_zouiten_fr.pdf -u "$USERNAME:$PASSWORD" https://cv.zouizoui.ovh/api/cv_zouiten_fr.pdf'
+    }
 }
