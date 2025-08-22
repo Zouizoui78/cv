@@ -18,6 +18,6 @@ node {
 
     withCredentials([usernamePassword(credentialsId: 'cv-upload', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
         upload_file("cv_zouiten_en.pdf", "https://cv.zouizoui.ovh/api/cv_zouiten_en.pdf", "$USERNAME:$PASSWORD")
-        upload_file("cv_zouiten_en.pdf", "https://cv.zouizoui.ovh/api/cv_zouiten_fr.pdf", "$USERNAME:$PASSWORD")
+        upload_file("cv_zouiten_fr.pdf", "https://cv.zouizoui.ovh/api/cv_zouiten_fr.pdf", "$USERNAME:$PASSWORD")
     }
 }
