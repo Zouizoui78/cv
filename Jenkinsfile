@@ -21,10 +21,10 @@ pipeline {
         stage('Generate PDFs') {
             steps {
                 script {
-                    def img = docker.build("azouiten/chromium-headless:0.1")
+                    def img = docker.build('azouiten/chromium-headless:0.1')
                     img.inside {
-                        generatePDF("src/cv_zouiten_en.html", "cv_zouiten_en.pdf")
-                        generatePDF("src/cv_zouiten_fr.html", "cv_zouiten_fr.pdf")
+                        generatePDF('src/cv_zouiten_en.html', 'cv_zouiten_en.pdf')
+                        generatePDF('src/cv_zouiten_fr.html', 'cv_zouiten_fr.pdf')
                     }
                 }
             }
@@ -46,6 +46,7 @@ pipeline {
 }
 
 def generatePDF(String input, String output) {
+    // String interpolation at groovy level requires double quotes
     sh("chromium --headless --no-sandbox --print-to-pdf=$output $input")
 }
 
