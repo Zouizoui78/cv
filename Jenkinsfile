@@ -47,8 +47,8 @@ pipeline {
 
 def generatePDF(String input, String output) {
     // String interpolation at groovy level requires double quotes
-    // "--disable-web-security" is to allow chromium to get external font
-    sh("chromium --headless --no-sandbox --disable-web-security --print-to-pdf=$output $input")
+    // "--disable-web-security --virtual-time-budget=10000" is to allow chromium to get external font
+    sh("chromium --headless --no-sandbox --disable-web-security --virtual-time-budget=10000 --print-to-pdf=$output $input")
 }
 
 def uploadFile(String file, String url) {
