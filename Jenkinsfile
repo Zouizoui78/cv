@@ -30,6 +30,21 @@ pipeline {
             }
         }
 
+        stage('Check PDFs size') {
+            steps {
+                script {
+                    def files = ['cv_zouiten_en.pdf', 'cv_zouiten_fr.pdf']
+                    def minSize = 50000
+                    files.each { file ->
+                        def size = sh(script: "stat -c %s ${file}", returnStdout: true).trim().toInteger()
+                        if (size < minSize) {
+                            error("File ${file} is smaller than ${minSize} bytes (${size} bytes), the generated PDF is probably broken.")
+                        }
+                    }
+                }
+            }
+        }
+
         stage('Upload PDFs') {
             steps {
                 uploadFile('cv_zouiten_en.pdf', 'https://cv.zouizoui.ovh/api/cv_zouiten_en.pdf')
