@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -it -v .:/cv azouiten/chromium-headless:0.1 chromium --headless --no-sandbox --print-to-pdf=/cv/cv_zouiten_en.pdf /cv/src/cv_zouiten_en.html
+docker run -it -v .:/cv azouiten/chromium-headless:0.1 chromium --headless --no-sandbox --print-to-pdf=/cv/cv_zouiten_fr.pdf /cv/src/cv_zouiten_fr.html
