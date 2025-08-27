@@ -14,6 +14,7 @@ body {
     height: 297mm;
 
     display: grid;
+    grid-template-rows: 1.6cm;
 
     border-bottom: 1px solid #575757;
 }
