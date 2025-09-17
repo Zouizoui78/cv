@@ -23,8 +23,7 @@ pipeline {
                 script {
                     def img = docker.build('azouiten/chromium-headless:0.1')
                     img.inside {
-                        generatePDF('src/cv_zouiten_en.html', 'cv_zouiten_en.pdf')
-                        generatePDF('src/cv_zouiten_fr.html', 'cv_zouiten_fr.pdf')
+                        generatePDFs()
                     }
                 }
             }
@@ -47,8 +46,7 @@ pipeline {
 
         stage('Upload PDFs') {
             steps {
-                uploadFile('cv_zouiten_en.pdf', 'https://cv.zouizoui.ovh/api/cv_zouiten_en.pdf')
-                uploadFile('cv_zouiten_fr.pdf', 'https://cv.zouizoui.ovh/api/cv_zouiten_fr.pdf')
+                uploadFiles()
             }
         }
     }
@@ -65,10 +63,20 @@ def generatePDF(String input, String output) {
     sh("chromium --headless --no-sandbox --print-to-pdf=$output $input")
 }
 
-def uploadFile(String file, String url) {
+def generatePDFs() {
+    generatePDF('src/cv_zouiten_en.html', 'cv_zouiten_en.pdf')
+    generatePDF('src/cv_zouiten_fr.html', 'cv_zouiten_fr.pdf')
+}
+
+def uploadFile(String file) {
     // If we use groovy string interpolation to pass credentials, they will leak
     // in various place e.g. in process listing.
     // So we escape the '$' so that the credential variables are expanded by the shell
     // using the environment variable.
-    sh("curl --fail-with-body -T $file -u \$UPLOAD_CREDENTIALS_USR:\$UPLOAD_CREDENTIALS_PSW $url")
+    sh("curl --fail-with-body -T $file -u \$UPLOAD_CREDENTIALS_USR:\$UPLOAD_CREDENTIALS_PSW https://cv.zouizoui.ovh/api/$file")
+}
+
+def uploadFiles() {
+    uploadFile('cv_zouiten_en.pdf')
+    uploadFile('cv_zouiten_fr.pdf')
 }
