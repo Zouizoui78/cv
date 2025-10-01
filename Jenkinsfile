@@ -1,27 +1,15 @@
 pipeline {
     agent any
 
-    options {
-        // Required to clean workspace before checkout
-        skipDefaultCheckout(true)
-    }
-
     environment {
         UPLOAD_CREDENTIALS = credentials('cv-upload')
     }
 
     stages {
-        stage('Checkout sources') {
-            steps {
-                cleanWs()
-                checkout(scm)
-            }
-        }
-
         stage('Generate PDFs') {
             steps {
                 script {
-                    def img = docker.build('azouiten/chromium-headless:0.1')
+                    def img = docker.build('azouiten/chromium-headless')
                     img.inside {
                         generatePDFs()
                     }
